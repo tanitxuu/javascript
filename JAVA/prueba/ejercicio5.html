@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <p id="titulo"> Mi Pagina web</p>
+    
+    <button type="button" onclick="BienvenidoR()">Ruso</button>
+
+    <button type="button" onclick="BienvenidoI()">Ingles</button>
+
+    <button type="button" onclick="BienvenidoE()">Español</button>
+    <script>
+        function BienvenidoR() {
+            document.getElementById('titulo').innerHTML= 'добро пожаловать';
+            var x = document.getElementById('titulo');
+            x.style.color = "red";
+        }
+        function BienvenidoI() {
+            document.getElementById('titulo').innerHTML= 'Welcome';
+            var x = document.getElementById('titulo');
+            x.style.color = "blue";
+        }
+        function BienvenidoE() {
+            document.getElementById('titulo').innerHTML= 'Bienvenido';
+            var x = document.getElementById('titulo');
+            x.style.color = "pink";
+        }
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <script>
+        function calcula(a,b,c){
+            if (b==undefined || c==undefined) {
+                return a*a;
+                
+            }else if(c==undefined){
+                return a*b;
+            }else{
+                return a+b+c;
+            }
+        }
+        console.log(calcula(3));
+        console.log(calcula(3,6));
+        console.log(calcula(3,7,8));
+    </script>
+</body>
+</html>
