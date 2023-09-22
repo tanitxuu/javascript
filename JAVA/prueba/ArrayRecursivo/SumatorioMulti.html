@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RECURSIVIDAD</title>
+</head>
+<body>
+    <p>SumInMulti
+        «Las obras se tienen medio terminadas cuando se han comenzado bien» Séneca
+        Realiza una función que sume de un array multidimensional todos sus elementos.
+        Lo más eficiente es que hagas una función recursiva.
+        Deberá funcionar para cualquier array.
+        Se proporciona código starter:
+    </p>
+    <p>
+        let array = [1,2,3,4];
+        Array.isArray(array); // true
+    </p>
+
+<script>
+let numeros = [1,[2,3,4],[8,15,[5,1]],27];
+function sumar(long) {
+        if(long===0) return 0;
+        return numeros[long-1] + sumar(long-1);
+        }
+    
+ console.log("El sumatorio es :"+sumar(numeros.length));
+
+// ESCRIBE TU CÓDIGO AQUÍ
+
+
+
+
+
+</script>
+</body>
+</html>
+
+Corrección:
+● Tu programa funciona y realiza todos los requisitos especificados: (5-10 puntos)
+● Tu programa no realiza los requisitos especificados en el enunciado: (0-4,99 puntos)
+Se valorará de tu programa:
+● El programa realiza la funcionalidad requerida.
+● Que no hay errores de consola.
+● La eficiencia.
+● La modularidad (alta cohesión y bajo acoplamiento).
+● Que el código sea limpio, flexible, reutilizable y mantenible.
+● Sigue los principios SOLID.
+● Otros criterios.

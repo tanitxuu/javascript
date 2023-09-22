@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BIG FOOT</title>
+</head>
+<body>
+<p id="txt">
+Pie Grande (del inglés Bigfoot) o Sasquatch (según el nombre que le
+dan los pueblos indígenas
+originarios de Norteamérica —que procede de la adaptación al inglés
+de la palabra original
+del idioma halkomelem sásq'ets) es una criatura legendaria con el
+aspecto de un primate
+perteneciente a la familia de los homínidos, que suele verse en
+bosques a elevadas altitudes,
+principalmente en la región del noroeste del Pacífico en América del
+Norte.
+
+<br><br>
+Crea un programa con una función recursiva que diga cual es la
+secuencia de Big foot's (sin la big) más largas para un array dado
+Por ejemplo: <br><br>
+foot -> tamaño 4<br>
+foooot -> tamaño 6<br>
+foooooot -> tamaño 8<br>
+<p>
+<script>
+let arr =
+["O","F","O","O","S","T","O","F","O","O","O","T","O","F","O","O","O","O","O","T"];
+// ESCRIBE TU CÓDIGO AQUÍ
+function secuencia(p) {
+    return arr[p-1] + secuencia(p-1);
+    
+}
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+Deberás entregar un fichero html con el script contenido en el mismo. No se aceptarán
+ficheros comprimidos o más de un fichero.
+Corrección:
+● Tu programa funciona correctamente, es eficiente y legible (7 -10 puntos).
+● Tu programa no funciona correctamente siempre porque tiene un ligero fallo, tienes
+código poco eficiente, tienes código poco legible o redundante o te falta alguno de
+los requisitos del enunciado (4-7 puntos)
+● Tu programa no funciona pero con algunas pequeñas correcciones podría presentar
+una solución válida. No aplicas la recursividad correctamente (1-4 puntos)
+● Tu programa tiene fallos en la consola o no es operativo (0 puntos)
+● Si tu solución no es recursiva no apruebas.
+
+
+Cosas que se valorarán:
+● Legibilidad del código.
+● Longitud del código.
+● No se valorará el aspecto estético de la web.
+● No utilizar variables globales.
+● Tu función es recursiva con una condición de parada adecuada.
+● Tu función sigue los principios SOLID. Se puede trasladar a otro programa de forma
+independiente.
+● El código escrito es eficiente.
+● El código escrito es fácilmente mantenible y entendible.
