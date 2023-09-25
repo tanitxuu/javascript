@@ -28,10 +28,33 @@ foooooot -> tamaño 8<br>
 let arr =
 ["O","F","O","O","S","T","O","F","O","O","O","T","O","F","O","O","O","O","O","T"];
 // ESCRIBE TU CÓDIGO AQUÍ
-function secuencia(p) {
-    return arr[p-1] + secuencia(p-1);
-    
+
+function findLongestFootSequence(arr, index = 0, currentSequence = "", longestSequence = "") {
+  if (index >= arr.length) {
+    // Fin del array, retorna la secuencia más larga encontrada
+    return longestSequence;
+  }
+
+  const char = arr[index];
+
+  if (char === "F" && currentSequence === "") {
+    // Encontró el inicio de una secuencia potencial
+    return findLongestFootSequence(arr, index + 1, "F", longestSequence);
+  } else if (char === "o" && currentSequence === "F") {
+    // Continuar la secuencia
+    return findLongestFootSequence(arr, index + 1, currentSequence + "o", longestSequence);
+  } else if (char === "o" && currentSequence !== "") {
+    // Restablecer la secuencia actual
+    return findLongestFootSequence(arr, index + 1, "F", currentSequence.length > longestSequence.length ? currentSequence : longestSequence);
+  } else {
+    // Restablecer la secuencia actual
+    return findLongestFootSequence(arr, index + 1, "", currentSequence.length > longestSequence.length ? currentSequence : longestSequence);
+  }
 }
+
+
+const longestFootSequence = findLongestFootSequence(arr);
+console.log("Secuencia más larga de 'foot': " + longestFootSequence);
 
 
 
