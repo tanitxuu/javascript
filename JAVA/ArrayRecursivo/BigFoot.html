@@ -26,36 +26,39 @@ foooooot -> tamaño 8<br>
 <p>
 <script>
 let arr =
-["O","F","O","O","S","T","O","F","O","O","O","T","O","F","O","O","O","O","O","T"];
+["O","F","O","O","S","T","O","F","O","O","O","T","O","F","O","O","O","T","O","T"];
 // ESCRIBE TU CÓDIGO AQUÍ
-
-function findLongestFootSequence(arr, index = 0, currentSequence = "", longestSequence = "") {
-  if (index >= arr.length) {
-    // Fin del array, retorna la secuencia más larga encontrada
-    return longestSequence;
-  }
-
-  const char = arr[index];
-
-  if (char === "F" && currentSequence === "") {
-    // Encontró el inicio de una secuencia potencial
-    return findLongestFootSequence(arr, index + 1, "F", longestSequence);
-  } else if (char === "o" && currentSequence === "F") {
-    // Continuar la secuencia
-    return findLongestFootSequence(arr, index + 1, currentSequence + "o", longestSequence);
-  } else if (char === "o" && currentSequence !== "") {
-    // Restablecer la secuencia actual
-    return findLongestFootSequence(arr, index + 1, "F", currentSequence.length > longestSequence.length ? currentSequence : longestSequence);
-  } else {
-    // Restablecer la secuencia actual
-    return findLongestFootSequence(arr, index + 1, "", currentSequence.length > longestSequence.length ? currentSequence : longestSequence);
-  }
-}
-
-
-const longestFootSequence = findLongestFootSequence(arr);
-console.log("Secuencia más larga de 'foot': " + longestFootSequence);
-
+function buscaFoot(num, arr) {
+            //condicion de parada, si es 3 devuelvo 0
+            if (num === 3) return 0;
+            //busco el bigfoot de tam num
+            console.log("buscando un bigfoot de tamaño: " + num)
+            for (let i = 0; i < arr.length - num + 1; i++) {
+                //recorro todo el array
+                //coloco dos punteros y los voy moviendo
+                let posi = i;
+                let posj = i;
+                //lo primero que debe de encontrar una F
+                if (arr[i] === "F") {
+                    while (posj < arr.length && arr[posj + 1] === "O") {
+                        //si esto es asi, la posj le sumo 1
+                        posj++;
+                        //finaliza con una T
+                        //si ya la siguiente es T tengo foot
+                        if (arr[posj + 1] === "T") {
+                            //le sumo 1 porque estoy contando las casillas
+                            if ((posj - posi + 2) == num) {
+                                return num;
+                            }
+                        }
+                    }
+                }
+            }
+            return contador;
+        }
+        //llama a la funcion con un numero en concreto
+        //console.log(buscaFoot(arr.length, arr));
+        console.log("La cadena más larga tiene un tamaño de :" + buscaFoot(arr.length, arr))
 
 
 
@@ -65,27 +68,3 @@ console.log("Secuencia más larga de 'foot': " + longestFootSequence);
 </script>
 </body>
 </html>
-
-Deberás entregar un fichero html con el script contenido en el mismo. No se aceptarán
-ficheros comprimidos o más de un fichero.
-Corrección:
-● Tu programa funciona correctamente, es eficiente y legible (7 -10 puntos).
-● Tu programa no funciona correctamente siempre porque tiene un ligero fallo, tienes
-código poco eficiente, tienes código poco legible o redundante o te falta alguno de
-los requisitos del enunciado (4-7 puntos)
-● Tu programa no funciona pero con algunas pequeñas correcciones podría presentar
-una solución válida. No aplicas la recursividad correctamente (1-4 puntos)
-● Tu programa tiene fallos en la consola o no es operativo (0 puntos)
-● Si tu solución no es recursiva no apruebas.
-
-
-Cosas que se valorarán:
-● Legibilidad del código.
-● Longitud del código.
-● No se valorará el aspecto estético de la web.
-● No utilizar variables globales.
-● Tu función es recursiva con una condición de parada adecuada.
-● Tu función sigue los principios SOLID. Se puede trasladar a otro programa de forma
-independiente.
-● El código escrito es eficiente.
-● El código escrito es fácilmente mantenible y entendible.
