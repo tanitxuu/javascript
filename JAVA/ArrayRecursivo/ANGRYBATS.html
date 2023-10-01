@@ -9,11 +9,57 @@
 
   <script>
 let biocenosis = [['P','P','G','H','H','M'],['P','P','G','H','H','G'],['P','G','M','H','H','G'],['G','M','M','H','G','G'],['M','M','H','H','G','P']];
-  function pandemic(x,y){
-    
+function pandemic(x, y) {
+  const numRows = biocenosis.length;
+  const numCols = biocenosis[0].length;
 
-
+  // Verificar si las coordenadas (x, y) están dentro de los límites de la matriz
+  if (x < 0 || x >= numRows || y < 0 || y >= numCols) {
+    console.log("Coordenadas fuera de los límites de la matriz.");
+    return;
   }
+
+  // Verificar si la celda en (x, y) contiene un murciélago (M)
+  if (biocenosis[x][y] !== "M") {
+    console.log("La celda no contiene un murciélago.");
+    return;
+  }
+
+  // Marcamos el murciélago como infectado
+  biocenosis[x][y] = "m";
+
+  // Función para verificar y eliminar humanos en las celdas adyacentes
+  function eliminarHumanos(i, j) {
+    if (i >= 0 && i < numRows && j >= 0 && j < numCols && biocenosis[i][j] === "H") {
+      biocenosis[i][j] = " "; // Marcamos a los humanos infectados como " "
+      eliminarHumanos(i - 1, j); // Verificar arriba
+      eliminarHumanos(i + 1, j); // Verificar abajo
+      eliminarHumanos(i, j - 1); // Verificar izquierda
+      eliminarHumanos(i, j + 1); // Verificar derecha
+    }
+  }
+
+  // Llamamos a la función eliminarHumanos para eliminar humanos adyacentes
+  eliminarHumanos(x - 1, y);
+  eliminarHumanos(x + 1, y);
+  eliminarHumanos(x, y - 1);
+  eliminarHumanos(x, y + 1);
+
+  // Imprimimos la matriz resultante
+  console.log("Matriz resultante:");
+  for (let i = 0; i < numRows; i++) {
+    console.log(biocenosis[i].join(" "));
+  }
+}
+
+// Ejemplo de uso
+console.log("Matriz inicial:");
+for (let i = 0; i < biocenosis.length; i++) {
+  console.log(biocenosis[i].join(" "));
+}
+
+pandemic(2, 2); // Llamamos a la función con las coordenadas del murciélago infectado
+
 
 
 

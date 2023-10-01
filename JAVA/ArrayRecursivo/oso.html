@@ -35,21 +35,44 @@
 
   function resuelve(tablero){
     //función que resuelve el juego
-    for (let i = 0; i < tablero.length; i++) {
-       
-      for (let j = 0; j < tablero.length; j++) {
-        if(tablero[i][j]== "O" && tablero[i][j+1]== "S" && tablero[i][j+2]== "O"){
-          tablero[i][j]="";
+  for (let i = 0; i < tablero.length; i++) {
+    for (let j = 0; j < tablero[i].length; j++) {
+      if (tablero[i][j] === "O") {
+        // Comprobar horizontalmente hacia la derecha
+        if (j + 2 < tablero[i].length && tablero[i][j + 1] === "S" && tablero[i][j + 2] === "O") {
+          tablero[i][j] = "";
+          tablero[i][j + 1] = "";
+          tablero[i][j + 2] = "";
         }
-        if(tablero[i][j]== "O" && tablero[i+1][j]== "S" && tablero[i+2][j]== "O"){
-          tablero[i][j]="";
+        
+        // Comprobar verticalmente hacia abajo
+        if (i + 2 < tablero.length && tablero[i + 1][j] === "S" && tablero[i + 2][j] === "O") {
+          tablero[i][j] = "";
+          tablero[i + 1][j] = "";
+          tablero[i + 2][j] = "";
+        }
+        
+        // Comprobar diagonal derecha-abajo
+        if (i + 2 < tablero.length && j + 2 < tablero[i].length && tablero[i + 1][j + 1] === "S" && tablero[i + 2][j + 2] === "O") {
+          tablero[i][j] = "";
+          tablero[i + 1][j + 1] = "";
+          tablero[i + 2][j + 2] = "";
+        }
+        
+        // Comprobar diagonal izquierda-abajo
+        if (i + 2 < tablero.length && j - 2 >= 0 && tablero[i + 1][j - 1] === "S" && tablero[i + 2][j - 2] === "O") {
+          tablero[i][j] = "";
+          tablero[i + 1][j - 1] = "";
+          tablero[i + 2][j - 2] = "";
         }
       }
     }
   }
+}
+
   rellena(tablero);
   console.log(JSON.parse(JSON.stringify(tablero)));
-resuelve(tablero);
+  resuelve(tablero);
   
 
  
