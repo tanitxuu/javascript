@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>STALINGRADO</h1>
+<p id="matriz"></p>
+<h2 id="ganador"></h2>
+
+<script>
+let battlefield = [
+["A","A","","","R","","","",""],
+["A","A","","","R","","","",""],
+["","","","","R","","","",""],
+["","","","","R","","","",""],
+["","","","","R","","","",""],
+["","","","","R","","","",""],
+["","","","","R","","","",""],
+["","","","","R","","","A","A"],
+["","","","","R","","","A","A"]
+];
+function ganador(battlefield){
+    let resultado=0;
+for (let i = 0; i < battlefield.length-1; i++) {
+    for (let j = 0; j < battlefield[0].length-1; j++) {
+        if(battlefield[i][j]==="A" ){
+            // Comprobar horizontalmente hacia la derecha
+            if (j + 1 < battlefield[i].length && battlefield[i][j + 1] === "A" ) {
+            }
+            // Comprobar verticalmente hacia abajo
+            if (i + 1 < battlefield.length && battlefield[i + 1][j] === "A") {
+         
+             }
+        }  
+    }
+    }
+}
+console.log(battlefield);
+
+</script>
+
+</body>
+</html>
