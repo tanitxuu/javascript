@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <script>
+            let arry= [1,2,3,4,5,6,5,4,3,2,1];
+    function capi(numero) {
+        let numeros = numero.toString();
+       
+        if(numeros.length <= 1){
+       
+        return true;
+       
+        }
+       
+        if(numeros[0]!== numeros[numeros.length-1]){
+        return false;
+        }
+       
+        return capi(numeros.slice(1,-1));
+        }
+       
+        const numero =12321;
+       
+        if(capi(numero)){
+        console.log("es capiacua");
+        }else {
+        console.log("no es capiacua");
+        }
+       
+       console.log(capi(arry))
+        </script>
+       
+       
+</body>
+</html>

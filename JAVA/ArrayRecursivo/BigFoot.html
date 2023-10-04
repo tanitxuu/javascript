@@ -26,7 +26,7 @@ foooooot -> tamaño 8<br>
 <p>
 <script>
 let arr =
-["O","F","O","O","S","T","O","F","O","O","O","T","O","F","O","O","O","T","O","T"];
+["O","F","O","O","S","T","O","F","O","O","O","T","O","F","O","O","O","O","O","T"];
 // ESCRIBE TU CÓDIGO AQUÍ
 function buscaFoot(num, arr) {
             //condicion de parada, si es 3 devuelvo 0
@@ -54,7 +54,7 @@ function buscaFoot(num, arr) {
                     }
                 }
             }
-            return contador;
+            return buscaFoot(num-1,arr);
         }
         //llama a la funcion con un numero en concreto
         //console.log(buscaFoot(arr.length, arr));
