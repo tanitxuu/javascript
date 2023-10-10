@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head>
+        <title>retos JavaScript</title>
+        </head>
+        
+        <body>
+        
+        <script>
+        var txt="";
+        const muestra = (valor, index, array) => {
+        txt += index+": "+valor + " ";
+        console.log(txt)
+        }
+        var dias = ['lunes','martes','miércoles' ,'jueves','viernes','sabado','domingo'];
+        var dias1 = ['lunes','martes',['miércoles' ,'jueves','viernes','sabado'],'domingo'];
+       
+        
+    // sirve para encontrar solo uno console.log(numeros.find((v)=>v>5))
+    //lo mismo que el de arriba pero con otra expresion console.log(numeros.find((v)=>{return(v>5)}))
+
+    //el filter es para coger todos los elementos que cumplen las condiciones
+       console.log(dias.filter((v)=>v.length>5))
+
+    //el flat es para una array bidimensional y se pueden concatenar
+       console.log(dias1.flat().filter((v)=>{return(v.length>5 && v.length<7)}))
+
+    //el maps  console.log(dias.map((v)=>v+6)) es para cambiar la array
+        </script>
+        </body>
+        
+        
+        </html>
+</body>
+</html>

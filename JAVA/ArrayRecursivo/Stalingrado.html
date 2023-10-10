@@ -18,23 +18,20 @@ let battlefield = [
 ["","","","","R","","","A","A"],
 ["","","","","R","","","A","A"]
 ];
-function ganador(battlefield){
-    let resultado=0;
-for (let i = 0; i < battlefield.length-1; i++) {
-    for (let j = 0; j < battlefield[0].length-1; j++) {
-        if(battlefield[i][j]==="A" ){
-            // Comprobar horizontalmente hacia la derecha
-            if (j + 1 < battlefield[i].length && battlefield[i][j + 1] === "A" ) {
-            }
-            // Comprobar verticalmente hacia abajo
-            if (i + 1 < battlefield.length && battlefield[i + 1][j] === "A") {
-         
-             }
-        }  
-    }
-    }
+let newbiocenosis = JSON.parse((JSON.stringify(battlefield)))
+function ganador(f,c){
+    let bicho = newbiocenosis[f][c]
+    newbiocenosis[f][c] = "X";
+    //izquierda
+    if (c>0 && newbiocenosis[f][c-1]==bicho) ganador(f,c-1);
+    //derecha
+    if(c<newbiocenosis[f].length-1 && newbiocenosis[f][c+1]==bicho) ganador(f,c+1);
+    //abajo
+    if (f<newbiocenosis.length-1 && newbiocenosis[f+1][c]==bicho) ganador(f+1,c);
+    //arriba
+    if (f>0 && newbiocenosis[f-1][c]==bicho) ganador(f-1,c);
 }
-console.log(battlefield);
+console.log(ganador(0,0));
 
 </script>
 
