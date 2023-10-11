@@ -14,10 +14,10 @@
          las mayúsculas y minúsculas en la búsqueda.</p>
     <p>
     <label for="codigo">introduce el codigo postal de la ciudad que buscas</label> 
-    <input type="text" name="codigo" id="codigo" value="">
+    <input type="text" name="codigo" id="codigo">
     <button type="submit" onclick="dale()">Buscar</button>
-    <label name="resultado" id="resultado"></label>
     </p>
+    <p name="resultado" id="resultado"></p>
     <script>
         function dale(){
         let arr=[{cp:28924,ciudad:"Estepona"},{cp:29601,ciudad:"Marbella"}];
@@ -25,6 +25,7 @@
         let obj = document.getElementById("resultado");
         let resul=arr.filter((v)=>v.cp==cod);
         console.log(resul.ciudad);
+        resul!=undefined? obj.innerHTML=resul:obj.innerHTML="no existe"
         
     }
     </script>

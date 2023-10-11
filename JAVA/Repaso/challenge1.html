@@ -8,16 +8,27 @@
 <body>
     <script>
         var array=["Manolo","Pedro","Paula","Federico","Paloma","Ester","Pedro","Manolo","Paloma","Federico","Manolo"];
-        function popular(arr){
+        var array2=array;
+        let contador=0;
+        let popular;
+
+        for (let i = 0; i < array.length; i++) {
+        
             let cont=0;
-            for (let i = 0; i < arr.length; i++) {
-               if(i==arr[i]){
+           for (let j = 0; j < array2.length; j++) {
+                
+             if(array[i]==array[j]){
                 cont++
-                if()
-               }  
+                if(cont>contador){
+                    contador=cont;
+                    popular=array[i];
+                }
+             }
+                
             }
-            return 
+            
         }
+        console.log(popular);
     </script>
 </body>
 </html>
