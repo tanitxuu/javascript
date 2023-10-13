@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<title>Myfpschool</title>
+<head>
+</head>
+<body>
+<input type="number" id="numero" value="5" min="1" max="10" />
+<p id="parrafo"></p>
+<input type="button" onclick="dale()" value="dale">
+<script>
+
+    function estructura(num,pos){
+        let a=num+(pos-1);
+        let b=num+(pos+1);
+        return a,b;
+    }
+    function piramide(fila,columna){
+        
+        if([fila-1][columna-1] && [fila-1][columna-1]) return 1;
+        if([fila-1][columna]){
+         
+           estructura(fila,columna);
+        }
+        return piramide(fila,columna);
+    }
+
+    function dale(){
+        var caja= document.getElementById("parrafo");
+        let lim=document.getElementById("numero").value;
+        for (let f = 0; f < lim; f++) {
+            var numero=1;
+            var espacio="";
+            for (let c = 0; c < lim-f-1; c++) {
+                espacio+="&nbsp&nbsp";}
+            for (let j = 1; j <= 2*f+1; j++) {
+                numero+=piramide(c,j);
+               // numero+="*";
+            }
+    caja.innerHTML=caja.innerHTML+espacio+numero+"<br>";
+    }
+}
+
+</script>
+</body>
+</html>
