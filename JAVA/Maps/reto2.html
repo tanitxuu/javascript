@@ -13,9 +13,10 @@ console.log(cars.flat(Infinity).concat(carrakos.flat(Infinity).filter(v=>!cars.f
 console.log(carrakos.flat(Infinity).filter(v=>!cars.flat(Infinity).find(f=>f==v)));
 
 var cars = ["Saab", "Volvo", "BMW",["Honda", "Toyota",["Lexus", "Mercedes", "Lada"], "Hyunday"]];
-var buddies = [{firstName:"Chuck", lastName:"Norris", car:"Honda"},{firstName:"Yakie", lastName:"Chang", car:"BMW"},{firstName:"Bruce", lastName:"Lee", car:"Honda"},{firstName:"Steven", lastName:"Seagal", car:"Lada"}];
+var buddies = [{firstName:"Chuck", lastName:"Norris", car:"Honda"},{firstName:"Yakie", lastName:"Chang", car:"BMV"},{firstName:"Bruce", lastName:"Lee", car:"Honda"},{firstName:"Steven", lastName:"Seagal", car:"Lada"}];
 //-Nombre y apellidos de los buddies que usan un Honda
-console.log(buddies.filter(v=>v.car=="Honda"));
+var nombre=buddies.filter(v=>v.car=="Honda");
+console.log(nombre.map(v=>v.firstName+" "+v.lastName));
 //-Marcas utilizadas por los buddies
 console.log(cars.flat(Infinity).filter(v=>buddies.find(f=>f.car===v)));
 //-Marcas no utilizadas por los buddies.
@@ -27,4 +28,4 @@ console.log(cars.flat(Infinity).filter(v=>!buddies.find(f=>f.car===v)).length);
 
   </script>
   </body>
-</html>
+</html> 
