@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>retos JavaScript</title>
+</head>
+<body>
+<h1>retos JavaScript</h1>
+<ul id="carrakos"> </ul>
+
+<script>
+
+var carrakos = ["Chevrolet", "Tesla", "BMW",["Honda", "Infiniti",["Lexus", "Mercedes", "Kia"], "Hyunday"],["Mazda", "Mercedes", "Jeep",["KTM", "Nissan", "Isuzu"]]];
+
+let lista=document.getElementById("carrakos");
+
+    carrakos.map(v=>{let crearli=document.createElement("li");
+    crearli.textContent=v;
+    if(v.isArray()){
+        v.flat().map(f=>{
+        let crearlu1=document.createElement("ul");
+        let crearli1=document.createElement("li");
+        crearlu1.textContent=crearli1;       
+        crearli1.textContent=f;})})  
+
+</script>
+</body>
+</html>
