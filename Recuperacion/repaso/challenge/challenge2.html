@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+     var array = ["Manolo", "Pedro", "Paula", "Federico", "Paloma", "Ester", "Pedro", "Paloma", "Federico", "Manolo", "Manolo"];
+let contador = 0;
+let popular;
+let popular2;
+let popular3;
+array.map(v => {
+    let cont = array.filter(i => v === i).length;
+    console.log(cont);
+    if (cont > contador) {
+        popular3 = popular2;
+        popular2 = popular;
+        popular = v;
+        if (cont > contador && v !== popular) {
+        popular3 = popular2;
+        popular2 = v;
+       
+    } if (cont > contador && v !== popular && v !== popular2) {
+        popular3 = v;
+        
+    }
+}});
+
+console.log(popular);
+
+    </script>
+</body>
+
+</html>
