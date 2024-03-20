@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reto 0</h1>
+    <p>Tenemos un array muy grande con elementos de la siguiente estructura:
+        [{28924:"Estepona"},....,{29601:"Marbella"}]
+        Lo que queremos es crear un texto y un botón que ponga buscar que lo que haga sea mostrar
+        el CP y el nombre de la ciudad que coincida o contenga el texto del campo creado. No importan
+         las mayúsculas y minúsculas en la búsqueda.</p>
+    <p>
+    <label for="codigo">introduce el codigo postal de la ciudad que buscas</label> 
+    <input type="text" name="codigo" id="codigo">
+    <button type="submit" onclick="dale()">Buscar</button>
+    </p>
+    <p name="resultado" id="resultado"></p>
+    <script>
+        function dale(){
+        let arr=[{cp:28924,ciudad:"Estepona"},{cp:29601,ciudad:"Marbella"}];
+        let cod= document.getElementById("codigo").value;
+        let obj = document.getElementById("resultado");
+        let resul=arr.filter((v)=>v.cp==cod);
+        console.log(resul.ciudad);
+        resul!=undefined? obj.innerHTML=resul:obj.innerHTML="no existe"
+        
+    }
+    </script>
+</body>
+</html>

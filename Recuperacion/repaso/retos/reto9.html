@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>retos JavaScript</title>
+  </head>
+  <body>
+    <h1>retos JavaScript</h1>
+    <ul id="carrakos"> </ul>
+
+    <script>
+//Se pide que saques los coches del array pero si tienen dueño lo especifiques. Se muestra imagen con la solución.
+
+let carrakos = ["Chevrolet", "Tesla", "BMW", ["Honda", "Infiniti", ["Lexus", "Mercedes", "Kia"], "Hyunday"], ["Mazda", "Mercedes", "Jeep", ["KTM", "Nissan", "Isuzu"]]];
+let xungos = [{ nombre: "Bruce Lee", carros: ["Chevrolet", "Tesla", "BMW"] }, { nombre: "YakiChan", carros: ["Lexus", "Mercedes", "Kia"] }];
+
+    let obj = document.getElementById("carrakos");
+//Todo en uno
+    function visualiza(arr, obj, ) {
+      arr.map(e => {
+        if (Array.isArray(e)) {
+          let newobj = document.createElement("ul");
+          obj.appendChild(newobj);
+          visualiza(e, newobj);
+        } else {//v => v.carros.includes(e));
+          let dueño = xungos.find(v => v.carros.find(c=>c==e));
+          let nodoCoche = document.createElement("li");
+          typeof dueño=="undefined"? 
+          texto = document.createTextNode(e):
+          texto = document.createTextNode(e + " de "+ dueño.nombre);
+          nodoCoche.appendChild(texto);
+          obj.appendChild(nodoCoche);
+        }
+      })
+    }
+
+    visualiza(carrakos, obj, xungos);
+
+
+
+    </script>
+  </body>
+</html>

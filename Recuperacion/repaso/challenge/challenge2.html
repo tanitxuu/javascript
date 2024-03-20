@@ -15,23 +15,26 @@ let popular;
 let popular2;
 let popular3;
 array.map(v => {
-    let cont = array.filter(i => v === i).length;
-    console.log(cont);
-    if (cont > contador) {
+    let t = array.filter((i)=>i === v).length
+    console.log(t)
+    
+        if (t > contador) {
         popular3 = popular2;
         popular2 = popular;
         popular = v;
-        if (cont > contador && v !== popular) {
+        }else if (t > contador && v !== popular) {
         popular3 = popular2;
         popular2 = v;
        
-    } if (cont > contador && v !== popular && v !== popular2) {
+    } else if (t > contador && v !== popular && v !== popular2) {
         popular3 = v;
         
     }
-}});
+    contador=t;
+    })
 
-console.log(popular);
+
+console.log(popular,popular2,popular3);
 
     </script>
 </body>

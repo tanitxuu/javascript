@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VIKINGS</title>
+</head>
+<body>
+<script>
+const REYES = ["Chindatore",["Chindasvinto","Rencesvinto","Lautaro"],["Lauro","Sisebuto",["Fracisbuto","Vigafredo",["Leovigildo","Recaredo"]]],"Amalarico II"];
+
+const buscaReyes=(arr,generacion)=>{
+arr.map(e=>{
+if (Array.isArray(e)){
+buscaReyes(e,!generacion)
+}else{
+if (generacion) console.log(e)
+}
+})
+}
+
+buscaReyes(REYES,false)
+
+</script>
+
+</body>
+</html>
