@@ -6,18 +6,19 @@
 <body>
 <script>
 var vikings = '{"vikingos":[{"reino":"Noruega","reyes":["Hakon","Harald","Ivar","Olaf","Bjorn","Ragnar"]},{"reino":"Dinamarca","reyes":["Frodo","Hamming","Angantyr","Horik"]}]}';
-// skriv inn koden din her. Vær forsiktig med at json-en jukser. Det er ikke en matrise, men et objekt.
-function reyes(array){
-    JSON.parse(array).vikings.map(v=> v)
-}
-let array= JSON.parse(vikings).vikingos
-const reyes=(arr,rey)=>{
-   arr.map(v=>{
-        let busc=vikings
-    })
+
+let array = JSON.parse(vikings).vikingos;
+
+const buscarrey = (arr, rey) => {
+    let encontrado = arr.some(v => v.reyes.includes(rey));
+    if (encontrado) {
+        return rey + ' es rey';
+    } else {
+        return rey + ' no es rey';
+    }
 }
 
+console.log(buscarrey(array, 'Manolo'));
 </script>
-
 </body>
 </html>

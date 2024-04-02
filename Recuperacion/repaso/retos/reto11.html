@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>REYES GODOS. BUSCAMAN</title>
+</head>
+<body>
+<script>
+var vikings = '{"vikingos":[{"reino":"Noruega","reyes":["Hakon","Harald",["Ivar",["Olaf","Lars","Lasse"],"Bjorn"],"Ragnar"]},{"reino":"Dinamarca","reyes":["Frodo","Hamming",["Angantyr","Sarunas"],"Horik"]}]}';
+
+let array = JSON.parse(vikings).vikingos;
+
+const buscarrey = (arr, rey) => {
+    let encontrado = arr.some(v => v.reyes.flat(2).includes(rey));
+    if (encontrado) {
+        return rey + ' es rey';
+    } else {
+        return rey + ' no es rey';
+    }
+}
+
+console.log(buscarrey(array, 'Angantyr'));
+</script>
+</body>
+</html>
